@@ -1,0 +1,9 @@
+install:
+  - curl http://www.rust-lang.org/rustup.sh | sudo sh -
+script:
+  - cargo clean
+  - cargo build
+  - cargo test
+  - rustdoc --test src/lib.rs -L target
+env:
+  - LD_LIBRARY_PATH=/usr/local/lib
