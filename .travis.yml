@@ -10,4 +10,4 @@ after_script:
 env:
   global:
     - LD_LIBRARY_PATH=/usr/local/lib
-    - secure: SXgB14EM5/aNOaVf1CQH10t1EsF9F6MKKmDaRbuWv6lARSFZhO6OXianHfYj11K/uCd19pxuHec/qMy34MeL9FCo4UeZw4xWRPUPgTe9VNxRu1farx7gAcOAfIX/F7+KdyX2JBfm0yMA+Q69kBP8JOp7vxVYPzoWOIYlHtOszYM=
+    - secure: VNed2UrRM3T8yO9gh2q8NcGwpzngNgeK9lvQ/XGjIiAr0tTzyPP2197snwB+h1fIIvtJRNjYCVgCHIY/JbjlRJ0QvvlARsz4OeVcIkXMnV7GRaxG17k1Vjp0PFUCDF0qpU1ZuxFZbPXYNpHDGXHgwkVQIrTQVsHenRzyWgJvUBk=
