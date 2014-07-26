@@ -1,4 +1,4 @@
-# Mesquite: A Rust Implementation of the MQTT Protocol
+# Mesquite: A Rust Implementation of the MQTT Protocol [![Build Status](https://travis-ci.org/omasanori/mesquite.svg?branch=master)](https://travis-ci.org/omasanori/mesquite)
 
 ## What Is This?
 
