@@ -5,8 +5,9 @@ script:
   - cargo build
   - cargo test
   - rustdoc --test src/lib.rs -L target
+  - rustdoc src/lib.rs
 after_script:
-      - curl http://www.rust-ci.org/artifacts/put?t=$RUSTCI_TOKEN | sh
+  - curl http://www.rust-ci.org/artifacts/put?t=$RUSTCI_TOKEN | sh
 env:
   global:
     - LD_LIBRARY_PATH=/usr/local/lib
