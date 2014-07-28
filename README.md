@@ -8,7 +8,7 @@ version is 3.1.1.
 
 ## Current Status
 
-Pre-alpha: Nothing is implemented.
+Pre-alpha: exploring typing of the protocol.
 
 ## License
 
