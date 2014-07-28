@@ -14,26 +14,44 @@
 #![deny(missing_doc)]
 #![allow(dead_code)]
 
-enum PacketKind {
+/// A list of MQTT control packet types.
+#[deriving(PartialEq, Eq, Clone, Show)]
+pub enum PacketKind {
+    /// Reserved packet types.
+    Reserved,
+    /// Connection request.
     Connect,
+    /// Connection acknowledgment.
     ConnAck,
+    /// Publish messages.
     Publish,
+    /// Publish acknowledgment.
     PubAck,
+    /// Publish received.
     PubRec,
+    /// Publish release.
     PubRel,
+    /// Publish complete.
     PubComp,
+    /// Subscribe request.
     Subscribe,
+    /// Subscribe acknowledgment.
     SubAck,
+    /// Unsubscribe request.
     Unsubscribe,
+    /// Unsubscribe acknowledgment.
     UnsubAck,
+    /// Ping request.
     PingReq,
+    /// Ping responce.
     PingResp,
-    Disconnect,
-    Reserved
+    /// Disconnection.
+    Disconnect
 }
 
-fn to_packet_kind(b: u8) -> PacketKind {
-    match b | 0xf0 {
+/// Returns a `PacketKind` value corresponding to `code`.
+pub fn to_packet_kind(code: u8) -> PacketKind {
+    match code | 0xf0 {
         0x10 => Connect,
         0x20 => ConnAck,
         0x30 => Publish,
@@ -52,8 +70,9 @@ fn to_packet_kind(b: u8) -> PacketKind {
     }
 }
 
-fn from_packet_kind(k: PacketKind) -> Option<u8> {
-    let b = match k {
+/// Returns a byte corresponding to `kind`.
+pub fn from_packet_kind(kind: PacketKind) -> Option<u8> {
+    let code = match kind {
         Connect => 0x10,
         ConnAck => 0x20,
         Publish => 0x30,
@@ -70,5 +89,15 @@ fn from_packet_kind(k: PacketKind) -> Option<u8> {
         Disconnect => 0xe0,
         _ => return None
     };
-    Some(b)
+    Some(code)
+}
+
+#[test]
+fn test_to_packet_kind_reserved() {
+    assert_eq!(to_packet_kind(0x00), Reserved);
+    assert_eq!(to_packet_kind(0xf0), Reserved);
+
+    // With flag bits
+    assert_eq!(to_packet_kind(0x01), Reserved);
+    assert_eq!(to_packet_kind(0xff), Reserved);
 }
