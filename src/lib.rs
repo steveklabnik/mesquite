@@ -107,4 +107,9 @@ mod test {
         assert_eq!(PacketKind::from_code(0x01), Reserved);
         assert_eq!(PacketKind::from_code(0xff), Reserved);
     }
+
+    #[test]
+    fn to_code_reserved() {
+        assert_eq!(PacketKind::to_code(Reserved), None);
+    }
 }
