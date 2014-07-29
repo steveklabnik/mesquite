@@ -6,6 +6,7 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
+
 //! # Mesquite: An Implementation of the MQTT Protocol
 
 #![experimental]
@@ -95,7 +96,7 @@ impl PacketKind {
 }
 
 #[cfg(test)]
-mod test {
+mod tests {
     use super::*;
 
     #[test]
