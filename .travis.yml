@@ -4,7 +4,6 @@ script:
   - cargo clean
   - cargo build
   - cargo test
-  - cargo test -- --bench
   - rustdoc --test src/lib.rs -L target
   - rustdoc src/lib.rs
 after_script:
