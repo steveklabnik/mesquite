@@ -1,4 +1,6 @@
-# Mesquite: A Rust Implementation of the MQTT Protocol [![Build Status](https://travis-ci.org/omasanori/mesquite.svg?branch=master)](https://travis-ci.org/omasanori/mesquite)
+# Mesquite: A Rust Implementation of the MQTT Protocol
+
+[![View build status on Travis CI](https://travis-ci.org/omasanori/mesquite.svg?branch=master)](https://travis-ci.org/omasanori/mesquite)
 
 ## What Is This?
 
@@ -8,7 +10,7 @@ version is 3.1.1.
 
 ## Current Status
 
-Pre-alpha: exploring typing of the protocol.
+Pre-alpha: exploring API design.
 
 ## License
 
