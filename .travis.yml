@@ -1,9 +1,13 @@
 install:
-  - curl http://www.rust-lang.org/rustup.sh | sudo sh -
-script:
-  - cargo build -v
-  - cargo test -v
-  - rustdoc --test src/lib.rs -L target
 env:
   global:
     - LD_LIBRARY_PATH=/usr/local/lib
+    - secure: iRKx/RTWt99uEesXE9Pc9cK+Rk8rsSXhGcWBtFA/bbQCDQI2SU2a78TO2wc6mywAXGfmGT/XyVUB/8l0XvDyT+IQL2VayWDDpBJt5ajM9u1+vm783r66fm4H7Vre25Wo6Crlh/Xd0qViOH0jO4iaDG/7CU38QI9PW0pADdMHhEQ=
+  - curl http://www.rust-lang.org/rustup.sh | sudo sh -
+script:
+  - cargo build
+  - cargo test
+  - cargo doc
+  - cp -R target/doc doc
+after_script:
+  - curl http://www.rust-ci.org/artifacts/put?t=$RUSTCI_TOKEN | sh
