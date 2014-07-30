@@ -1,9 +1,8 @@
 install:
   - curl http://www.rust-lang.org/rustup.sh | sudo sh -
 script:
-  - cargo clean
-  - cargo build
-  - cargo test
+  - cargo build -v
+  - cargo test -v
   - rustdoc --test src/lib.rs -L target
   - rustdoc src/lib.rs
 after_script:
