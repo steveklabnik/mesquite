@@ -7,6 +7,7 @@ install:
 script:
   - cargo build
   - cargo test
+  - cargo bench
   - cargo doc
   - cp -R target/doc doc
 after_script:
