@@ -1,4 +1,4 @@
 [package]
 name = "mesquite"
 version = "0.0.1"
-authors = ["Masanori Ogino"]
+authors = ["Masanori Ogino <masanori.ogino@gmail.com>"]
