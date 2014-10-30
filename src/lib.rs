@@ -51,7 +51,7 @@ impl PacketType {
             PingReq => 0xc0,
             PingResp => 0xd0,
             Disconnect => 0xe0,
-            _ => fail!("Converting from a reserved packet type.")
+            _ => panic!("Converting from a reserved packet type.")
         }
     }
 
